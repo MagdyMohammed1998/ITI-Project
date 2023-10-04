@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="order.css"> 
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar">
+          <img src="../Rescours/logo.jpg" id="logo">
+        
+        <nav>
+          <ul>
+            <li> <a href="../index.html"> Home</a></li>
+            <li> <a href="../service/services.html"> Minue</a></li>
+            <li> <a href="../login/login.html"> Login</a></li>
+            
+            <li> <a href="../rating/Rating.html"> Rateing </a></li>
+          </ul>
+        
+        
+        </nav>
+        <img src="../Rescours/icon.png" class="menu-icon">
+      
+      </div>
+
+      <div class="box">
+       <h3> Enter Your Name:</h3>
+       <br>
+     <form>
+         <label > User Name:</label>
+         <br>
+       <input type="text" placeholder="Your Name">
+          <br>
+         <label > Your ID Card:</label>
+         <br>
+        <input type="password" placeholder="Your ID" id="id_card">
+        <div class="errorms" id="idError"></div>
+        <br>
+          
+        <!-- <button type="submit" class="btn" onclick="openpopup()"> Enroll</button> -->
+     </form>
+
+     <button type="submit" class="btn" onclick="getId()"> Enroll</button>
+
+     <div class="popup" id="popup">
+     <img src="../Rescours/tick.png" >
+     <h2> Thank You!</h2>
+     <p> You Will Receive Your Order in a few Minutes</p>
+     <button type="button" onclick="closepopup()"> OK</button>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    
+
+
+
+</div>
+
+<script >
+
+let popup = document.getElementById("popup");
+
+ function openpopup(){
+
+popup.classList.add("open-popup");
+
+}   
+
+
+
+function closepopup(){
+
+popup.classList.remove("open-popup");
+
+}
+//==========================================================
+function getId() {
+    let idCard = document.getElementById("id_card").value.trim();
+    let idPattern = /^[0-9]{1,15}$/;
+
+    if (!idPattern.test(idCard)) {
+        openpopup();
+    } else {
+        alert("Invalid ID card You must Enter 16 Number");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*function getId(){
+ let idCard = document.getElementById("id_card").value;
+   let idPatern = /^[0-9]{4,}$/;
+     
+  if(!idPatern.test(idCard)){
+     openpopup();
+
+   //console.log("id sucss");
+    
+  
+
+  } else{
+
+     prompt("invalid id card");
+
+  }
+
+
+}         
+
+
+let idCard = document.getElementById("id_card").value.trim();
+let idPatern = /^[0-9]{4,}$/;
+
+if(idPatern.test(idCard)){
+document.getElementById("idError").textContent = "invalid id";
+ 
+
+}
+
+
+*/
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
